@@ -45,7 +45,7 @@ public class Inicio {
                 switch(strOpcion){
                     case "Opcion 1":
                         TomaDeDatos dato=new TomaDeDatos();
-                        dato.Datos();
+                        dato.ingresoDatos();
                         System.out.println("Opcion 1");
                         break;
                     case "Opcion 2":
@@ -74,9 +74,7 @@ public class Inicio {
                             "ingresado nada, porfavor ingrese el numero de "+
                             "la opcion que desea" +e,"Error",JOptionPane.ERROR_MESSAGE);
                 }
-            }
-            
-      
+            }      
         }while(strOpcion!="Opcion 4");
     }
 }
