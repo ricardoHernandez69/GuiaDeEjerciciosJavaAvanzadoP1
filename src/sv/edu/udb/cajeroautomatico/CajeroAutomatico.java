@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cajeroautomatico;
-
+package sv.edu.udb.cajeroautomatico;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,8 +11,7 @@ import javax.swing.JOptionPane;
  * @author Ricardo
  */
 public class CajeroAutomatico {
-//    public static void main(String[] args) {
-    public void cajero(){//Comentarear esta parte para trabajar esta seccion
+     public void cajero(){//Comentarear esta parte para trabajar esta seccion
         JOptionPane.showMessageDialog(null,"Cajero Automatico","Resultado",JOptionPane.INFORMATION_MESSAGE);
         System.out.println("Cajero Automatico");
     }

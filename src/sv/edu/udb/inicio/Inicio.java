@@ -3,22 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package sv.edu.udb.inicio;
 
-package guiadeejerciciosjavap1;
-import tomadedatos.TomaDeDatos;
-import cajeroautomatico.CajeroAutomatico;
-import mediateca.Mediateca;
 import javax.swing.JOptionPane;
-
+import sv.edu.udb.cajeroautomatico.*;
+import sv.edu.udb.mediateca.*;
+import sv.edu.udb.tomadedatos.*;
 /**
  *
  * @author Ricardo
  */
-public class GuiaDeEjerciciosJavaP1 {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Inicio {
     public static void main(String[] args) {
         // TODO code application logic here
         String strOpcion="";
@@ -84,5 +79,4 @@ public class GuiaDeEjerciciosJavaP1 {
       
         }while(strOpcion!="Opcion 4");
     }
-    
 }
