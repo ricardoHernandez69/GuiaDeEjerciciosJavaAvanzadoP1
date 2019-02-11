@@ -135,4 +135,16 @@ class MostrarErrores{
         JOptionPane.showMessageDialog(null, "La fecha ingresado supera la fecha actual"+
                 "\nPorfavor vuelva a escribir la fecha","Error",JOptionPane.ERROR_MESSAGE);
     }
+    public void errorNombre(){
+        JOptionPane.showMessageDialog(null, "Porfavor ingrese el nombre para continuar",
+                "Error",JOptionPane.ERROR_MESSAGE);
+    }
+    public void errorSexo(){
+        JOptionPane.showMessageDialog(null, "Seleccione el sexo para continuar",
+                "Error",JOptionPane.ERROR_MESSAGE);
+    }
+    public void errorFechaNulo(){
+        JOptionPane.showMessageDialog(null, "Ingrese la fecha para continuar",
+                "Error",JOptionPane.ERROR_MESSAGE);
+    }
 }

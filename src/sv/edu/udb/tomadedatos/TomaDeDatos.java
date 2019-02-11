@@ -24,17 +24,25 @@ public class TomaDeDatos {
     private static int edad;
     
     
-//    public static void main(String[] args) {
+//    public static void main(String[] args) throws NullPointerException{
         
     
-    public void ingresoDatos(){//Comentarear para trabajar esta seccion
+    public void ingresoDatos() throws NullPointerException{//Comentarear para trabajar esta seccion
         int fechaCorrecta=0;//Esta bariable se utiliza para determinar si la fecha ingresada es correcta o no
         ProcesamientoDeDatos process=new ProcesamientoDeDatos();//Creamos un objeto para instanciar a la clase donde se procesan los datos
         SignoSodiacal signo=new SignoSodiacal();//Esta clase se utilisa para obtener el signo sodiacal
         JOptionPane.showMessageDialog(null,"Toma de Datos, Porfavor ingrese "
                 +"los datos que se le piden a continuacion",
                 "Resultado",JOptionPane.INFORMATION_MESSAGE);
-        nombre=JOptionPane.showInputDialog("Ingrese Nombre y Apellido: ");
+        while(nombre==null){
+            nombre=JOptionPane.showInputDialog("Ingrese Nombre y Apellido: ");
+            if(nombre==null){
+                process.errorNombre();
+            }
+            
+        }
+        while(sexo==null)
+        {
         sexo=(String) JOptionPane.showInputDialog(
                 null,
             "¿Sexo?",
@@ -43,9 +51,18 @@ public class TomaDeDatos {
             null, // null para icono defecto
             new Object[] { "Masculino", "Femenino"},
             "Masculino");
+            if(nombre==null){
+                    process.errorSexo();
+                }
+        }
         do{
-            
-            fecha=JOptionPane.showInputDialog("Ingresar Fecha");
+            while(fecha==null){
+                fecha=JOptionPane.showInputDialog("Ingresar Fecha");
+                System.out.println(fecha);
+                if(fecha==null){
+                    process.errorFechaNulo();
+                }
+            }
             fechaCorrecta=process.evaluacionFecha(fecha);//Se manda a llamar a un metodo donde se determina la validez de la fecha 
             //Ir a la clase PRocesamientoDeDatos para verificar lo que hace
             if(fechaCorrecta==1){
@@ -59,6 +76,7 @@ public class TomaDeDatos {
             }else{
                 fechaCorrecta=0;
                 JOptionPane.showMessageDialog(null, "Fecha Incorrecta");
+                fecha=null;
             }
                 
             
