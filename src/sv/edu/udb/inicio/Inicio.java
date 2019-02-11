@@ -28,11 +28,11 @@ public class Inicio {
             try{
                 strOpcion=(String) JOptionPane.showInputDialog(null,
                         "***************************************"+
-                        "\n*      1-  Ejercicio No 1             *"+
+                        "\n*      1-  Toma de Datos              *"+
                         "\n***************************************"+
                         "\n*      2-  Cajero Automatico          *"+
                         "\n***************************************"+
-                        "\n*      3-  Ejercicio No 3             *"+
+                        "\n*      3-  Mediateca             *"+
                         "\n***************************************"+
                         "\n*      4- Salir                       *"+
                         "\n***************************************"+
