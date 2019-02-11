@@ -94,22 +94,23 @@ public class ProcesamientoDeDatos extends ValidacionDeDatos{
     }
 }
 class ValidacionDeDatos extends MostrarErrores{
-    SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
+    SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");//Da un formato a la fecha y ayuda a la validacion
 
     public int evaluacionFecha(String fecha){
         int resultado;
-        String regex = "^[0-3][0-9]-[0-3][0-9]-(?:[0-9][0-9])?[0-9][0-9]$";
+        String regex = "^[0-3][0-9]-[0-3][0-9]-(?:[0-9][0-9])?[0-9][0-9]$";//Expresion regular formato dd-mm-yyyy
         Pattern pattern = Pattern.compile(regex);
                 Matcher matcher = pattern.matcher(fecha);
-                if(matcher.find()){
+                if(matcher.find()){//Determina que sea del formato. dd-mm-yy
                     try {
-                        formatoFecha.setLenient(false);
-                        formatoFecha.parse(fecha);                        
+                        formatoFecha.setLenient(false);//determina que la fecha este dentro de los parametros establecidos
+                        //ejemplo que no sean mas de 12 meses,
+                        formatoFecha.parse(fecha);//Si es valido la fecha, deveelve 1                        
                         resultado=1;
                         
-                    } catch (ParseException e) {
+                    } catch (ParseException e) {//Si es falso entonces devuelve cero
                         resultado=0;
-                        errorTamañoFecha();
+                        errorTamañoFecha();//Muestra el error
                     }                   
                 }
                 else{

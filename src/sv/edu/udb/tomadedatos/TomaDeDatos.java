@@ -28,9 +28,9 @@ public class TomaDeDatos {
         
     
     public void ingresoDatos(){//Comentarear para trabajar esta seccion
-        int fechaCorrecta=0;
-        ProcesamientoDeDatos process=new ProcesamientoDeDatos();
-        SignoSodiacal signo=new SignoSodiacal();
+        int fechaCorrecta=0;//Esta bariable se utiliza para determinar si la fecha ingresada es correcta o no
+        ProcesamientoDeDatos process=new ProcesamientoDeDatos();//Creamos un objeto para instanciar a la clase donde se procesan los datos
+        SignoSodiacal signo=new SignoSodiacal();//Esta clase se utilisa para obtener el signo sodiacal
         JOptionPane.showMessageDialog(null,"Toma de Datos, Porfavor ingrese "
                 +"los datos que se le piden a continuacion",
                 "Resultado",JOptionPane.INFORMATION_MESSAGE);
@@ -46,15 +46,15 @@ public class TomaDeDatos {
         do{
             
             fecha=JOptionPane.showInputDialog("Ingresar Fecha");
-            fechaCorrecta=process.evaluacionFecha(fecha);
-            
+            fechaCorrecta=process.evaluacionFecha(fecha);//Se manda a llamar a un metodo donde se determina la validez de la fecha 
+            //Ir a la clase PRocesamientoDeDatos para verificar lo que hace
             if(fechaCorrecta==1){
-                edad=process.obtenerAño(fecha);
+                edad=process.obtenerAño(fecha);//obtiene la edad, para verificar que sea mayor a un año
                 if(edad>=0){
-                    JOptionPane.showMessageDialog(null, "Fecha Correcta, Usted tiene:"+edad);
+                    fechaCorrecta=1;//si es verdad, entonces se le asigna el valor de uno
                 }else{
-                    process.errorAño();
-                    fechaCorrecta=0;
+                    process.errorAño();//Si no, manda un mensaje de error
+                    fechaCorrecta=0;//Se asigna el valor de cero para que no salga del bucle
                 }
             }else{
                 fechaCorrecta=0;
@@ -62,15 +62,12 @@ public class TomaDeDatos {
             }
                 
             
-        }while(fechaCorrecta!=1);
-        GregorianCalendar calendar = new GregorianCalendar();
-        int año=process.getAño();
+        }while(fechaCorrecta!=1);      
         int mes=process.getMes();
         int dia=process.getDia();
-        String sodiacal=signo.signo(dia, mes);
-        
-        String diaSemana=process.diaSemana();
-        String bisiesto=process.bisiesto();
+        String sodiacal=signo.signo(dia, mes);//Se obtiene el signo sodiacal por medio del mes y el año     
+        String diaSemana=process.diaSemana();//Se obtiene el dia de la semana en que nacio
+        String bisiesto=process.bisiesto();//Se determina si el año en que nacio es bisiesto
         if(edad>30){
             if(sexo.equals("Masculino")){
                 JOptionPane.showMessageDialog(null,
